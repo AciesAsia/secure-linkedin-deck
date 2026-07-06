@@ -4,9 +4,10 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Professional Presentation</title>
+    <!-- Social Preview Mapping Configuration -->
     <meta property='og:title' content='Executive Presentation Strategy'>
     <meta property='og:description' content='View my latest presentation deployed securely.'>
-    <meta property='og:image' content='slides/slide1.png'>
+    <meta property='og:image' content='slides/Slide1.PNG'>
     <meta property='og:type' content='website'>
     <style>
         body { margin: 0; background-color: #111; font-family: sans-serif; -webkit-user-select: none; user-select: none; }
@@ -19,15 +20,19 @@
 </head>
 <body oncontextmenu='return false;'>
     <div class='container'>
-        <img id='slideView' src='slides/slide1.png' alt='Presentation Slide'>
+        <!-- Initial Slide Target Pathway -->
+        <img id='slideView' src='slides/Slide1.PNG' alt='Presentation Slide'>
         <div class='controls'>
             <button onclick='prevSlide()'>Previous</button>
             <button onclick='nextSlide()'>Next</button>
         </div>
     </div>
     <script>
-        let current = 1; const totalSlides = 5;
-        function updateSlide() { document.getElementById('slideView').src = `slides/slide${current}.png`; }
+        // Synchronized to your 8 uploaded assets
+        let current = 1; const totalSlides = 8;
+        
+        // Exact case-sensitive naming string structure
+        function updateSlide() { document.getElementById('slideView').src = `slides/Slide${current}.PNG`; }
         function nextSlide() { if(current < totalSlides) { current++; updateSlide(); } }
         function prevSlide() { if(current > 1) { current--; updateSlide(); } }
         window.addEventListener('keydown', e => { if(e.key === 'ArrowRight') nextSlide(); if(e.key === 'ArrowLeft') prevSlide(); });
