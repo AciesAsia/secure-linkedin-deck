@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Professional Presentation</title>
+    <meta property='og:title' content='Executive Presentation Strategy'>
+    <meta property='og:description' content='View my latest presentation deployed securely.'>
+    <meta property='og:image' content='slides/slide1.png'>
+    <meta property='og:type' content='website'>
+    <style>
+        body { margin: 0; background-color: #111; font-family: sans-serif; -webkit-user-select: none; user-select: none; }
+        .container { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; }
+        img { max-width: 90%; max-height: 80vh; border: 1px solid #333; pointer-events: none; -webkit-touch-callout: none; }
+        .controls { margin-top: 20px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; background: #003366; color: white; border: none; margin: 0 10px; border-radius: 4px; }
+        @media print { body { display: none; } }
+    </style>
+</head>
+<body oncontextmenu='return false;'>
+    <div class='container'>
+        <img id='slideView' src='slides/slide1.png' alt='Presentation Slide'>
+        <div class='controls'>
+            <button onclick='prevSlide()'>Previous</button>
+            <button onclick='nextSlide()'>Next</button>
+        </div>
+    </div>
+    <script>
+        let current = 1; const totalSlides = 5;
+        function updateSlide() { document.getElementById('slideView').src = `slides/slide${current}.png`; }
+        function nextSlide() { if(current < totalSlides) { current++; updateSlide(); } }
+        function prevSlide() { if(current > 1) { current--; updateSlide(); } }
+        window.addEventListener('keydown', e => { if(e.key === 'ArrowRight') nextSlide(); if(e.key === 'ArrowLeft') prevSlide(); });
+    </script>
+</body>
+</html>
